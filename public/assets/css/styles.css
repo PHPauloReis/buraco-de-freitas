@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --azul-primario: #127CE7
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/*
+ Topo
+ */
+
+.bg_header {
+    background-color: var(--azul-primario);
+    color: #FFF;
+    margin-bottom: 30px;
+}
+
+.bg_header a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.brand {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.brand img {
+    max-width:100%;
+}
+
+.brand_label {
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+#menu-principal {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+@media screen and (min-width: 992px) {
+    #menu-principal {
+        margin-left: 30px;
+    }
+
+    #menu-principal .nav-link {
+        margin-left: 20px;
+    }
+}
+
+/*
+ Hero
+ */
+.hero {
+    background-image: url('./../images/bg_banner.png');
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #FFF;
+}
+
+.hero h1 {
+    font-weight: bold;
+}
+
+.hero-button {
+    background-color: #004993;
+    border-color: #004589;
+    border-radius: 35px;
+    padding: 10px 20px;
+}
+
+.hero-button img {
+    margin-right: 7px;
+}
+
+@media screen and (min-width: 778px) {
+    .hero-button {
+        background-color: #004993;
+        border-color: #004589;
+        border-width: 2px;
+        padding: 15px 50px;
+        border-radius: 35px;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/*
+ Denuncias
+ */
+.denuncias h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--azul-primario);
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #DADADA;
+}
+
+.card {
+    box-shadow: 0px 0px 10px #CCC;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    font-size: 16px;
+    text-align: center;
+    line-height: normal;
+}
+
+.card-body h3 {
+    color: var(--azul-primario);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card-body p {
+    margin-bottom: 5px;
+}
+
+.card-body hr {
+    border-color: #333;
+}
+
+.card-body img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/*
+ Raking
+ */
+.ranking h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--azul-primario);
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #DADADA;
+}
+
+.ranking .top {
+    font-weight: bold;
+}
+
+.table img {
+    height: 26px;
+    margin-bottom: 0;
+}
+
+/*
+ Rodapé
+ */
+footer {
+    background-color: var(--azul-primario);
+    font-size: 19px;
+    font-weight: bold;
+    color: #FFF;
+}
