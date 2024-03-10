@@ -73,7 +73,7 @@
 
             <div class="col-md">
 
-                <div class="card">
+                <div class="card mb-5">
 
                     <div class="card-body">
 

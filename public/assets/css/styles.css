@@ -116,6 +116,7 @@ body {
 .card {
     box-shadow: 0px 0px 10px #CCC;
     margin-bottom: 30px;
+    padding: 10px;
 }
 
 .card-body {
@@ -143,6 +144,26 @@ body {
     width: 100%;
     border-radius: 6px;
     margin-bottom: 10px;
+}
+
+/*
+ Formulários
+ */
+.card label {
+    font-weight: bold;
+}
+
+.card-upload {
+    display: flex;
+    border: 5px dashed #DBDBDB;
+    border-radius: 16px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px;
+    font-size: 34px;
+    color: #A0A0A0;
+    text-align: center;
 }
 
 /*
@@ -174,4 +195,40 @@ footer {
     font-size: 19px;
     font-weight: bold;
     color: #FFF;
+}
+
+/*
+ Commons
+ */
+.text-left {
+    text-align: left;
+}
+
+.btn-custom-success {
+    background-color: #56AD2D;
+    border: 2px solid #2E8B02;
+    border-radius: 35px;
+}
+
+.btn-custom-success .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.btn-custom-success:hover,
+.btn-custom-success:active {
+    background-color: #56AD2D !important;
+    border: 2px solid #2E8B02 !important;
+}
+
+.btn-custom-success img {
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    margin-right: 7px;
 }
