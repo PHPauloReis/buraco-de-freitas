@@ -232,3 +232,9 @@ footer {
     margin: 0;
     margin-right: 7px;
 }
+
+input,
+textarea {
+    font-size: 19px !important;
+    padding: 10px 15px !important;
+}

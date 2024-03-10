@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="hero px-5 text-center d-flex flex-column justify-content-center align-items-center rounded-4">
                     <h1 class="mb-4">Encontrou um buraco em<br>Lauro de Freitas?</h1>
-                    <a class="btn btn-primary hero-button">
+                    <a href="/denunciar" class="btn btn-primary hero-button">
                         <img src="./assets/images/icons/megaphone.svg">
                         Denuncie agora mesmo!
                     </a>
@@ -77,7 +77,7 @@
 
                     <div class="card-body">
 
-                        <table class="table">
+                        <table class="table table-ranking">
                             <thead>
                                 <tr>
                                     <th scope="col" style="text-align: left">Nome</th>
