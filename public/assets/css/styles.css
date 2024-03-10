@@ -148,7 +148,7 @@ body {
 /*
  Raking
  */
-.ranking h2 {
+h2 {
     font-size: 36px;
     font-weight: bold;
     color: var(--azul-primario);
@@ -157,7 +157,7 @@ body {
     border-bottom: 1px solid #DADADA;
 }
 
-.ranking .top {
+.table-ranking .top {
     font-weight: bold;
 }
 

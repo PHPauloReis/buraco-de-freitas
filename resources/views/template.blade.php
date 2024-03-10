@@ -17,10 +17,12 @@
     <nav class="navbar navbar-expand-lg bg_header" data-bs-theme="dark">
         <div class="container">
 
-            <div class="brand">
-                <img src="./assets/images/icons/cam.svg">
-                <div class="brand_label">Buraco de Freitas</div>
-            </div>
+            <a href="/">
+                <div class="brand">
+                    <img src="./assets/images/icons/cam.svg">
+                    <div class="brand_label">Buraco de Freitas</div>
+                </div>
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,9 +30,9 @@
 
             <div class="collapse navbar-collapse" id="menu-principal">
                 <div class="navbar-nav ms-auto">
-                <a class="nav-link active" aria-current="page" href="#"><img src="./assets/images/icons/home.svg"> Home</a>
-                <a class="nav-link" href="#"><img src="./assets/images/icons/megaphone.svg"> Denunciar</a>
-                <a class="nav-link" href="#"><img src="./assets/images/icons/phone.svg"> Contato</a></a>
+                <a class="nav-link active" aria-current="page" href="/"><img src="./assets/images/icons/home.svg"> Home</a>
+                <a class="nav-link" href="/denunciar"><img src="./assets/images/icons/megaphone.svg"> Denunciar</a>
+                <a class="nav-link" href="/contato"><img src="./assets/images/icons/phone.svg"> Contato</a></a>
                 </div>
             </div>
 
