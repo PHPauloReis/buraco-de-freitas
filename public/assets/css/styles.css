@@ -160,10 +160,17 @@ body {
     margin-top: 10px;
     justify-content: center;
     align-items: center;
-    padding: 80px 30px;
     font-size: 34px;
     color: #A0A0A0;
     text-align: center;
+    cursor: pointer;
+    height: 300px;
+    position: relative;
+}
+
+.card-upload::after {
+    content: attr(data-text);
+    color: #A0A0A0;
 }
 
 /*
@@ -237,4 +244,23 @@ input,
 textarea {
     font-size: 19px !important;
     padding: 10px 15px !important;
+}
+
+.previewsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.previewsContainer img {
+    max-width: 200px;
+}
+
+.previewsContainer .dz-details {
+    margin-bottom: 30px;
+}
+
+.previewsContainer .dz-success-mark,
+.previewsContainer .dz-error-mark,
+.previewsContainer .dz-error-message {
+    display: none;
 }

@@ -8,7 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
@@ -58,7 +60,39 @@
 
     </footer>
 
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+
+    let myDropzone = new Dropzone("div#dropzone", {
+        url: "/denunciar/upload",
+        paramName: "photo",
+        maxFilesize: 2,
+        uploadMultiple: false,
+        parallelUploads: 1,
+        maxFiles: 1,
+        thumbnailWidth: 500,
+        thumbnailHeight: 500,
+        thumbnailMethod: 'crop',
+        previewsContainer: '.previewsContainer',
+        init: function() {
+            this.on("addedfile", function(file) {
+                if (this.files.length > 1) {
+                    this.removeFile(this.files[0]);
+                }
+            });
+
+            this.on("success", function(file, response) {
+                document.getElementById("photo").value = response.imageName
+            })
+        },
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('[name="_token"]').value
+        }
+    });
+
+    </script>
 
 </body>
 </html>

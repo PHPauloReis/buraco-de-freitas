@@ -12,13 +12,41 @@
 
         </div>
 
+        @if($errors->any())
+        <div class="row">
+            <div class="col-md">
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong><br>
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if(session()->has('success'))
+        <div class="row">
+            <div class="col-md">
+                <div class="alert alert-success">
+                    <strong>Uêba!!!</strong><br>
+                    {{ session()->get('success') }}
+                </div>
+            </div>
+        </div>
+        @endif
+
         <div class="row">
 
             <div class="col-md">
 
                 <div class="card mb-5">
 
-                    <form action="">
+                    <form action="{{ route('complaint.store') }}" method="post" enctype="multipart/form-data">
+
+                        @csrf
 
                         <div class="card-body text-left">
 
@@ -26,40 +54,39 @@
 
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label for="nome" class="form-label">Qual o seu nome?</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="Ex.: Pedro Santos">
+                                        <label for="author" class="form-label">Qual o seu nome?</label>
+                                        <input type="text" class="form-control" id="author" name="author" placeholder="Ex.: Pedro Santos" value="{{ old('author') }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label for="email" class="form-label">Qual o seu e-mail?</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Ex.: email@gmail.com">
+                                        <label for="author_email" class="form-label">Qual o seu e-mail?</label>
+                                        <input type="text" class="form-control" id="email_author" name="email_author" placeholder="Ex.: email@gmail.com" value="{{ old('email_author') }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="mb-4">
-                                        <label for="local" class="form-label">Qual o local do buraco?</label>
-                                        <input type="text" class="form-control" id="local" placeholder="Ex.: Av. Luiz Tarquinio Pontes, nº 137">
+                                        <label for="localization" class="form-label">Qual o local do buraco?</label>
+                                        <input type="text" class="form-control" id="localization" name="localization" placeholder="Ex.: Av. Luiz Tarquinio Pontes, nº 137" value="{{ old('localization') }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="mb-4">
-                                        <label for="referencia" class="form-label">Ponto de referência</label>
-                                        <input type="text" class="form-control" id="referencia" placeholder="Ex.: Ao lado do mercado Rede Mix">
+                                        <label for="reference" class="form-label">Ponto de referência</label>
+                                        <input type="text" class="form-control" id="reference" name="reference" placeholder="Ex.: Ao lado do mercado Rede Mix" value="{{ old('reference') }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <label for="">Fotografia</label>
-                                    <div class="card-upload mb-5">
-                                        <div class="content">
-                                            <strong>Clique</strong> ou <strong>arraste</strong> uma<br>
-                                            foto para aqui!
-                                        </div>
+                                    <div id="dropzone" class="card-upload mb-5" data-text="Clique ou arraste uma foto para aqui!">
+                                        <div class="content"></div>
+                                        <input type="hidden" name="photo" id="photo">
                                     </div>
+                                    <div class="previewsContainer"></div>
                                 </div>
 
                                 <div class="col-md-12 mb-4 d-flex justify-content-center">

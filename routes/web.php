@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComplaintController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/denunciar', function () {
-    return view('denunciar');
-});
+Route::get('/denunciar', [ComplaintController::class, 'create'])->name('complaint.create');
+Route::post('/denunciar', [ComplaintController::class, 'store'])->name('complaint.store');
+Route::post('/denunciar/upload', [ComplaintController::class, 'upload'])->name('complaint.upload');
 
 Route::get('/contato', function () {
     return view('contato');
