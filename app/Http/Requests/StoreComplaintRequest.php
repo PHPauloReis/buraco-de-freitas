@@ -41,7 +41,7 @@ class StoreComplaintRequest extends FormRequest
             'localization.min' => 'O endereço informado é muito curto!',
             'reference.required' => 'Parece que você esqueceu de informar um ponto de referência!',
             'reference.min' => 'O ponto de referência informado é muito curto!',
-            'photo.required' => 'Parece que você esqueceu de selecionar uma foto ou o arquivo selecionado não está em um formato não aceito pelo sistema. Selecione apenas imagens do tipo: JPG, PNG ou GIF!'
+            'photo.required' => 'Parece que você esqueceu de selecionar uma foto ou o arquivo selecionado não está em um formato aceito pelo sistema. Selecione apenas imagens do tipo: JPG, PNG ou GIF!'
         ];
     }
 }

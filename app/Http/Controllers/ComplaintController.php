@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Complaint;
 use App\Http\Requests\StoreComplaintRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\UploadComplaintRequest;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -35,7 +35,7 @@ class ComplaintController extends Controller
         return redirect()->back();
     }
 
-    public function upload(Request $request)
+    public function upload(UploadComplaintRequest $request)
     {
         $file = $request->file('photo');
         $newNameFile = $file->hashName();

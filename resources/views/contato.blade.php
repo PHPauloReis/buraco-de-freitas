@@ -41,7 +41,7 @@
                                 <div class="col-md-12">
                                     <div class="mb-4">
                                         <label for="mensagem" class="form-label">Sua mensagem</label>
-                                        <textarea class="form-control" id="mensagem" rows="10" placeholder="Sua mensagem"></textarea>
+                                        <textarea class="form-control" id="mensagem" rows="10" placeholder="Sua mensagem">{{ $defaultReportMessage }}</textarea>
                                     </div>
                                 </div>
 

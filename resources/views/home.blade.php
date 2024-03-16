@@ -30,20 +30,24 @@
 
         <div class="row">
 
-            @foreach ([1, 2, 3,4 ,5 ,6] as $item)
+            @foreach ($complaints as $complaint)
 
             <div class="col-md-4">
 
                 <div class="card">
                     <div class="card-body">
                         <img src="./assets/images/denuncias/1234.png" alt="Buraco na Av. Luiz Tarquinio Pontes">
-                        <h3>Av. Luiz Tarquíneo, 233, Centro</h3>
-                        <p>Próximo a Alto Escola ViIas</p>
-                        <p><strong>Registrado há 3 meses</strong></p>
+                        <h3>{{ $complaint->localization }}</h3>
+                        <p>{{ $complaint->reference }}</p>
+                        <p><strong>Registrado {{ $complaint->created_at->diffForHumans() }}</strong></p>
 
                         <hr>
 
-                        <p>Não está mais lá? <a href="/contato">Reporte</a></p>
+                        @php
+                            $defaultReportMessage = base64_encode("Olá, tudo bem!? Gostaria de informar que o buraco da localidade {$complaint->localization}, já não existe mais!");
+                        @endphp
+
+                        <p>Não está mais lá? <a href="/contato?mensagem={{ $defaultReportMessage }}">Reporte</a></p>
                     </div>
                 </div>
 

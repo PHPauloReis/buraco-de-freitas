@@ -85,7 +85,11 @@
 
             this.on("success", function(file, response) {
                 document.getElementById("photo").value = response.imageName
-            })
+            });
+
+            this.on("error", function(file, errorMessage) {
+                document.getElementById("photo").value = ""
+            });
         },
         headers: {
             'X-CSRF-TOKEN': document.querySelector('[name="_token"]').value
