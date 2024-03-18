@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/contato', [ContactController::class, 'form']);
-
+Route::post('/contato', [ContactController::class, 'sendMail'])->name('contact.sendMail');
 Route::get('/denunciar', [ComplaintController::class, 'create'])->name('complaint.create');
 Route::post('/denunciar', [ComplaintController::class, 'store'])->name('complaint.store');
 Route::post('/denunciar/upload', [ComplaintController::class, 'upload'])->name('complaint.upload');
